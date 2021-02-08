@@ -19,15 +19,15 @@ public interface CountriesService {
     @GET
     @Path("/name/{name}")
     @Produces("application/json")
-    Set<Country> getByName(@PathParam String name);
+    Set<Country> getByName(@PathParam("name") String name);
 
     @GET
     @Path("/name/{name}")
     @Produces("application/json")
-    CompletionStage<Set<Country>> getByNameAsync(@PathParam String name);
+    CompletionStage<Set<Country>> getByNameAsync(@PathParam("name") String name);
 
     @GET
     @Path("/name/{name}")
     @Produces("application/json")
-    Uni<Set<Country>> getByNameAsUni(@PathParam String name);
+    Uni<Set<Country>> getByNameAsUni(@PathParam("name") String name);
 }

@@ -24,21 +24,21 @@ public class CountriesResource {
     @GET
     @Path("/name/{name}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Set<Country> name(@PathParam String name) {
+    public Set<Country> name(@PathParam("name") String name) {
         return countriesService.getByName(name);
     }
 
     @GET
     @Path("/name-async/{name}")
     @Produces(MediaType.APPLICATION_JSON)
-    public CompletionStage<Set<Country>> nameAsync(@PathParam String name) {
+    public CompletionStage<Set<Country>> nameAsync(@PathParam("name") String name) {
         return countriesService.getByNameAsync(name);
     }
 
     @GET
     @Path("/name-uni/{name}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Uni<Set<Country>> nameMutiny(@PathParam String name) {
+    public Uni<Set<Country>> nameMutiny(@PathParam("name") String name) {
         return countriesService.getByNameAsUni(name);
     }
 }
